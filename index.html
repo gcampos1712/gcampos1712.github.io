@@ -103,29 +103,32 @@
     <div id="setup" style="display: none;">
       <canvas id="setupCanvas" width="330" height="110" style="display: block; border: 1px solid black; background-color: white;">      
       </canvas>
+      <div style="font-size: 0.6em; margin: 10px;">
+        Level up your skills to help you win. You can only add 4 extra points in total to your skill chart. Select your skills accordingly to help you eat more food than the other species. This game is dependent on your skills, so choose wisely.
+      </div>
       <div>
         <label for="perception">Perception</label>
         <span id="perceptionValue">1</span>
         <input type="range" id="perception" name="perception" min="1" max="5" value="1"/>
-        <div class="description">How far the specie can look to find food.</div>
+        <div class="description">Increasing perception allows your specie to access food from a greater distance.</div>
       </div>
       <div>
         <label for="speed">Speed</label>
         <span id="speedValue">1</span>
         <input type="range" id="speed" name="speed" min="1" max="5" value="1"/>
-        <div class="description">How fast the specie can move.</div>
+        <div class="description">Increasing speed allows your specie to reach food faster than its opponents.</div>
       </div>
       <div>
         <label for="luck">Luck</label>
         <span id="luckValue">1</span>
         <input type="range" id="luck" name="luck" min="1" max="5" value="1"/>
-        <div class="description">Odds (from 0% to 100%) to generate 1 extra offspring.</div>
+        <div class="description">Increasing your luck raises the chance you will produce an extra specie. More species = more chances you will acquire food.</div>
       </div>
       <div>
         <label for="size">Size</label>
         <span id="sizeValue">1</span>
         <input type="range" id="size" name="size" min="1" max="5" value="1"/>
-        <div class="description">How big the specie is.</div>
+        <div class="description">Increasing size makes your specie have a greater diameter. The effect is similar to perception.</div>
       </div>
       <div style="margin-top: 0.5em">
         <label >Points left</label>
@@ -138,7 +141,11 @@
     <div id="canvasWrapper" style="display: none;">
       <div id="canvasTitle">Round 1</div>
       <canvas id="canvas" width="330" height="330" style="display: inline-block; border: 1px solid red">      
-      </canvas>  
+      </canvas>
+      <br />
+      <div style="font-size: 0.4em; margin: 10px; width: 330px; display: inline-block;">
+        The graph below the game screen shows your ranking. The goal is to have your blue line be higher than the other colors. To win your species must collect the most amount of "food" (the red dots). If your specie gets no food it will die, if it gets at least one piece it will remain alive and if it gets over two pieces it may reproduce.
+      </div>
     </div>
     <div id="gameOver" style="display: none;">
       <h1>Game over</h1>
