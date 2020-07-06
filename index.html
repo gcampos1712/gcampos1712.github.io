@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Species Royale</title>
+    <meta name="viewport" content="width=330, initial-scale=1, maximum-scale=1">
+  </head>
+  <style>
+    * {
+      font-family: sans-serif;
+    }
+
+    #intro1 {
+      width: 330px;
+      height: 400px;
+      background-color:coral;      
+      color: white;
+      cursor: pointer;
+      display: inline-block;
+      text-align: left;
+    }
+
+    #intro2 {
+      width: 330px;
+      height: 400px;
+      background-color:rgb(255, 102, 0);
+      color: white;
+      cursor: pointer;
+      display: none;
+      text-align: left;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5em;
+    }
+
+    li {
+      margin-bottom: 1em;
+    }
+
+    .tap {
+      text-align: center;
+      text-decoration: underline;
+      margin-top: 3em;
+    }
+
+    #setup {
+      width: 330px; 
+      background-color:rgb(240, 240, 240); 
+      display: inline-block; 
+      text-align: left;
+    }
+
+    label {
+      margin-left: 10px;
+      display: inline-block;
+      text-align: left;
+      width: 30%;
+      font-size: 0.8em;
+      position: relative;
+      top: -0.3em;
+      padding-top: 1.5em;
+    }
+
+    .description {
+      font-size: 0.6em;
+      margin-left: 10px;
+      margin-bottom: 1em;
+    }
+
+    span {
+      position: relative;
+      top: -0.3em;
+    }
+
+    #gameOver {
+      color:rgb(255, 102, 0);
+    }
+
+    h3 {
+      margin-top: -1em;
+    }
+  </style>
+  <body style="text-align: center;">
+    <div id="intro1">
+      <h1>Species Royale</h1>
+      <ul>
+        <li>Create your own specie</li>
+        <li>Compete for food with other species</li>
+        <li>Game ends after 20 rounds</li>
+      </ul>
+      <div class="tap">Tap to continue</div>
+    </div>
+    <div id="intro2">
+      <h1>Rules</h1>
+      <ul>
+        <li>Creature eats no food: <b>dies</b></li>
+        <li>Creature eats 1 food: <b>survives</b></li>
+        <li>Creature eats +2 food: <b>reproduces</b></li>
+      </ul>
+      <div class="tap">Tap to continue</div>
+    </div>
+    <div id="setup" style="display: none;">
+      <canvas id="setupCanvas" width="330" height="110" style="display: block; border: 1px solid black; background-color: white;">      
+      </canvas>
+      <div>
+        <label for="perception">Perception</label>
+        <span id="perceptionValue">1</span>
+        <input type="range" id="perception" name="perception" min="1" max="5" value="1"/>
+        <div class="description">How far the specie can look to find food.</div>
+      </div>
+      <div>
+        <label for="speed">Speed</label>
+        <span id="speedValue">1</span>
+        <input type="range" id="speed" name="speed" min="1" max="5" value="1"/>
+        <div class="description">How fast the specie can move.</div>
+      </div>
+      <div>
+        <label for="luck">Luck</label>
+        <span id="luckValue">1</span>
+        <input type="range" id="luck" name="luck" min="1" max="5" value="1"/>
+        <div class="description">Odds (from 0% to 100%) to generate 1 extra offspring.</div>
+      </div>
+      <div>
+        <label for="size">Size</label>
+        <span id="sizeValue">1</span>
+        <input type="range" id="size" name="size" min="1" max="5" value="1"/>
+        <div class="description">How big the specie is.</div>
+      </div>
+      <div style="margin-top: 0.5em">
+        <label >Points left</label>
+        <span id="pointsLeftValue">5</span>        
+      </div>
+      <div style="text-align: center;margin: 0.75em">
+        <input type="button" id="startGame" value="Start game" disabled="true"/>
+      </div>
+    </div>
+    <div id="canvasWrapper" style="display: none;">
+      <div id="canvasTitle">Round 1</div>
+      <canvas id="canvas" width="330" height="330" style="display: inline-block; border: 1px solid red">      
+      </canvas>  
+    </div>
+    <div id="gameOver" style="display: none;">
+      <h1>Game over</h1>
+      <h3 id="gameOverMessage">You won!</h3>
+      <input type="button" value="Play again" onclick="location.reload(true)" style="margin-bottom: 1.5em;"/>
+    </div>
+    <canvas id="chart" width="330" height="165" style="display: none;"></canvas>
+    <script src="bundle.js"></script>
+  </body>
+</html>
