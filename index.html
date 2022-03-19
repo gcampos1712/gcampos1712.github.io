@@ -1,12 +1,42 @@
 <!doctype html>
 <html>
   <head>
-    <title>Species Royale</title>
+    <title>Pontrdle</title>
+    <link rel="shortcut icon" type="image/png" href="favicon3.png"/>
     <meta name="viewport" content="width=330, initial-scale=1, maximum-scale=1">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B9J2EHFRTM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-B9J2EHFRTM');
+    </script>
   </head>
   <style>
     * {
       font-family: sans-serif;
+    }
+
+    #viralTwitter, #viralTwitter:visited {
+      background-color: #1b95e0;
+      color: #fff;
+      border-radius: 4px;
+      height: 28px;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 26px;
+      padding: 8px 8px 8px 30px;
+      text-decoration: none;
+      background-image: url('/images/twitter.png');
+      background-repeat: no-repeat;
+      background-size: 16px 13px;
+      background-position: 8px 10px;
+      margin-bottom: 20px;
+    }
+
+    #viralTwitter:hover {
+        background-color: #0c7abf;
     }
 
     #intro1 {
@@ -83,7 +113,7 @@
   </style>
   <body style="text-align: center;">
     <div id="intro1">
-      <h1>Species Royale</h1>
+      <h1>Pontrdle</h1>
       <ul>
         <li>Create your own specie</li>
         <li>Compete for food with other species</li>
@@ -150,7 +180,14 @@
     <div id="gameOver" style="display: none;">
       <h1>Game over</h1>
       <h3 id="gameOverMessage">You won!</h3>
-      <input type="button" value="Play again" onclick="location.reload(true)" style="margin-bottom: 1.5em;"/>
+      <div id="viral" style="margin-bottom: 20px"><a href="http://pontrdle.com">pontrdle.com</a> day 1<br />
+&#128153; <span style="top:0" id="geneCount0">30</span> &#129505; <span style="top:0" id="geneCount1">30</span> &#128156; <span style="top:0" id="geneCount2">30</span> &#128154; <span style="top:0" id="geneCount3">30</span></div>
+      <div>
+        <a id="viralTwitter" href="https://twitter.com/intent/tweet?text=" target="_blank" rel="noopener noreferrer">Tweet</a>
+      </div>
+      <div>
+        <input type="button" value="Play again" onclick="location.reload(true)" style="margin: 1.5em;"/>
+      </div>
     </div>
     <canvas id="chart" width="330" height="165" style="display: none;"></canvas>
     <script src="bundle.js"></script>
